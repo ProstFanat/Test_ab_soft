@@ -1,7 +1,7 @@
+resources/DriversSetUp.java
+ resources.DriversSetUp
 resources/BasePage.java
  resources.BasePage
  resources.BasePage$1
 main/MainPage.java
  main.MainPage
-resources/DriversSetUp.java
- resources.DriversSetUp

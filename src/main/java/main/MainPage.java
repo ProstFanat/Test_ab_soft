@@ -33,9 +33,11 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//ul[@class = 'pagination']//li//a")
     public List<WebElement> paginationPages;
 
-    public void waitUntilArticlesView(){
+    @FindBy(xpath = "//article-list//*[contains(text(), 'Loading')]")
+    public WebElement preLoader;
 
-        waitToVisibilityOf(10000, articleList);
+    public void waitUntilArticlesView(){
+        waitToInvisibilityOf(10000, preLoader);
     }
 
     public void filterByTag(String tagName){
@@ -56,8 +58,6 @@ public class MainPage extends BasePage {
             for (int i = 1; i <= articles.size(); i++) {
                 Assert.assertTrue(driver.findElement(By.xpath("//article-preview[" + i + "]//ul[@class = 'tag-list']//li[contains(text(), '" + tagName + "')]")).isDisplayed());
             }
-
-            //test
         }
     }
 

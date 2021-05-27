@@ -10,9 +10,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 
-    public BasePage() {
+    public WebDriver driver;
 
+    public BasePage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
+        this.driver = driver;
     }
+
 
     public void waitForPageLoaded() {
         ExpectedCondition<Boolean> expectation = new
@@ -30,25 +34,8 @@ public class BasePage {
         }
     }
 
-    public WebDriver driver;
-
-    public BasePage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-        this.driver = driver;
-    }
-
-    public void waitToBeClickable (int timeOut, WebElement element){
-        try {
-            new WebDriverWait(driver, timeOut).ignoring(StaleElementReferenceException.class)
-                    .until(ExpectedConditions
-                            .elementToBeClickable(element));
-        } catch (TimeoutException e){
-            System.out.println("Test failed. Time to wait is end " + e);
-        }
-    }
-
-    public void waitToVisibilityOf (int timeOut, WebElement element){
-        new WebDriverWait(driver, timeOut).until(ExpectedConditions.visibilityOf(element));
+    public void waitToInvisibilityOf (int timeOut, WebElement element){
+        new WebDriverWait(driver, timeOut).until(ExpectedConditions.invisibilityOf(element));
     }
 
 }
