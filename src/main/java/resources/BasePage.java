@@ -17,7 +17,6 @@ public class BasePage {
         this.driver = driver;
     }
 
-
     public void waitForPageLoaded() {
         ExpectedCondition<Boolean> expectation = new
                 ExpectedCondition<Boolean>() {

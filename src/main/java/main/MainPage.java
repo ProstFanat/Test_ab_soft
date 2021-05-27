@@ -21,12 +21,6 @@ public class MainPage extends BasePage {
         this.driver = driver;
     }
 
-    @FindBy(xpath = "//*[contains(text(), 'Global Feed')]")
-    private WebElement tabGlobalFeed;
-
-    @FindBy(xpath = "//article-list")
-    private WebElement articleList;
-
     @FindBy(xpath = "//article-preview")
     public List<WebElement> articles;
 
@@ -38,11 +32,12 @@ public class MainPage extends BasePage {
 
     public void waitUntilArticlesView(){
         waitToInvisibilityOf(10000, preLoader);
+        Assert.assertNotNull(articles);
     }
 
     public void filterByTag(String tagName){
         driver.findElement(By.xpath("//*[@ng-bind = 'tagName'][text() = '" + tagName + "']")).click();
-    };
+    }
 
     public boolean isTagTabPresent(String tagName){
         return driver.findElement(By.xpath("//*[contains(text(), '" + tagName + "')]")).isDisplayed();
