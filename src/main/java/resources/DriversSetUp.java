@@ -29,16 +29,4 @@ public class DriversSetUp {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return driver;
     }
-
-    public WebDriver getChromeDriverMac(){
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedrivermac");
-        ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless");
-        driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        return driver;
-    }
-
-
 }
