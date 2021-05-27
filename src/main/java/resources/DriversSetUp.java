@@ -31,7 +31,7 @@ public class DriversSetUp {
     }
 
     public WebDriver getChromeDriverMac(){
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedrivermac.uu");
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedrivermac");
         ChromeOptions options = new ChromeOptions();
         //options.addArguments("--headless");
         driver = new ChromeDriver(options);
