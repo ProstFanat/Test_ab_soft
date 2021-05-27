@@ -19,7 +19,7 @@ public class FilterTag {
     @BeforeClass
     private void beforeAll(){
         drivers = new DriversSetUp();
-        driver = drivers.getChromeDriverWindows();
+        driver = drivers.getChromeDriverMac();
         basePage = new BasePage(driver);
 
         mainPage = new MainPage(driver);
