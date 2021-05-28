@@ -13,10 +13,10 @@ To run the tests from Idea you need to:
 
 To run the test from Terminal you need to:
 1) Open Terminal at the package with project
-2) Run "greadlew test" from Windows and "./gradlew test" from Linux
+2) Run "gradlew test" from Windows and "./gradlew test" from Linux
 
 To open the Allure report you need to:
-From Linux - Open Terminal at the package with project and run command "./greadlew allureServe"
+From Linux - Open Terminal at the package with project and run command "./gradlew allureServe"
 
 From Windows - Open Terminal at the package with project, go to folder "build" and run command "allure serve"
 
